@@ -4,7 +4,7 @@
 
 该项目是通过[Create React App](https://github.com/facebook/create-react-app)启动的。
 
-## [安装使用](https://juejin.cn/post/7324951354844561446)
+## [安装使用](https://juejin.cn/post/7324951354844561446#heading-1)
 
 
 
