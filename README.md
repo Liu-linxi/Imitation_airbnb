@@ -6,28 +6,29 @@
 
 ## [安装使用](https://juejin.cn/post/7324951354844561446#heading-1)
 
-1. 项目目录配置![allocation](https://github.com/Liu-linxi/Imitation_airbnb/assets/86284893/880e3c64-c9bc-488c-8d0c-d8e28ef32b0e)
+1.项目目录配置![allocation](https://github.com/Liu-linxi/Imitation_airbnb/assets/86284893/880e3c64-c9bc-488c-8d0c-d8e28ef32b0e)
 
+2.craco配置别名和less样式
 
-2. craco配置别名和less样式
+1. @->src配置   react中默认是不识别此种方式，需要在webpack中配置，但是react脚手架默认隐藏因此需要用到craco配置
 
-   1. @->src配置   react中默认是不识别此种方式，需要在webpack中配置，但是react脚手架默认隐藏因此需要用到craco配置
+2. `npm run eject`会将隐藏webpack弹出暴露出来很多文件，不推荐使用
 
-   2. `npm run eject`会将隐藏webpack弹出暴露出来很多文件，不推荐使用
+3. 由此使用craco->create-react-app config相当于craco.config.js里面配置的东西和原本的webpack配置进行合并，也就是配置就可以生效了
 
-   3. 由此使用craco->create-react-app config相当于craco.config.js里面配置的东西和原本的webpack配置进行合并，也就是配置就可以生效了
+   ###### 安装命令：`npm install @craco/craco`
 
-      ###### 安装命令：`npm install @craco/craco`
+   安装之后项目根目录创建craco.config.js文件
 
-      安装之后项目根目录创建craco.config.js文件
+   注：如果你的版本不匹配package.json中->"react-scripts": "5.0.1"是当前的可以使用`npm install @craco/craco@alpha -D`
 
-      注：如果你的版本不匹配package.json中->"react-scripts": "5.0.1"是当前的可以使用`npm install @craco/craco@alpha -D`
+3.craco.config.js配置后需要修改package.json文件中启动方式![2](https://github.com/Liu-linxi/Imitation_airbnb/assets/86284893/e4743638-b303-44e6-81ef-a97319ebd371)
 
-​		4.craco.config.js配置后需要修改package.json文件中启动方式![2](https://github.com/Liu-linxi/Imitation_airbnb/assets/86284893/e4743638-b303-44e6-81ef-a97319ebd371)
+4.[配置less参考](https://4x-ant-design.antgroup.com/docs/react/use-with-create-react-app-cn/)
 
-​		5.[配置less参考](https://4x-ant-design.antgroup.com/docs/react/use-with-create-react-app-cn/)
+5.样式重置` npm install normalize.css`
 
-​		6.样式重置` npm install normalize.css`
+6.项目路由配置`npm install react-router-dom`
 
 ## 可用脚本
 
