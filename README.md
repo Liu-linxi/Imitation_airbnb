@@ -25,8 +25,9 @@
 
 ​		4.craco.config.js配置后需要修改package.json文件中启动方式![2](https://github.com/Liu-linxi/Imitation_airbnb/assets/86284893/e4743638-b303-44e6-81ef-a97319ebd371)
 
-
 ​		5.[配置less参考](https://4x-ant-design.antgroup.com/docs/react/use-with-create-react-app-cn/)
+
+​		6.样式重置` npm install normalize.css`
 
 ## 可用脚本
 
