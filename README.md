@@ -6,7 +6,25 @@
 
 ## [安装使用](https://juejin.cn/post/7324951354844561446#heading-1)
 
+1. 项目目录配置![](.\IMG_README\allocation.png)
 
+2. craco配置别名和less样式
+
+   1. @->src配置   react中默认是不识别此种方式，需要在webpack中配置，但是react脚手架默认隐藏因此需要用到craco配置
+
+   2. `npm run eject`会将隐藏webpack弹出暴露出来很多文件，不推荐使用
+
+   3. 由此使用craco->create-react-app config相当于craco.config.js里面配置的东西和原本的webpack配置进行合并，也就是配置就可以生效了
+
+      ###### 安装命令：`npm install @craco/craco`
+
+      安装之后项目根目录创建craco.config.js文件
+
+      注：如果你的版本不匹配package.json中->"react-scripts": "5.0.1"是当前的可以使用`npm install @craco/craco@alpha -D`
+
+​		4.craco.config.js配置后需要修改package.json文件中启动方式![](.\IMG_README\2.png)
+
+​		5.[配置less参考](https://4x-ant-design.antgroup.com/docs/react/use-with-create-react-app-cn/)
 
 ## 可用脚本
 
