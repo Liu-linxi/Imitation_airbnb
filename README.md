@@ -6,7 +6,8 @@
 
 ## [安装使用](https://juejin.cn/post/7324951354844561446#heading-1)
 
-1. 项目目录配置![](.\IMG_README\allocation.png)
+1. 项目目录配置![allocation](https://github.com/Liu-linxi/Imitation_airbnb/assets/86284893/880e3c64-c9bc-488c-8d0c-d8e28ef32b0e)
+
 
 2. craco配置别名和less样式
 
@@ -22,7 +23,8 @@
 
       注：如果你的版本不匹配package.json中->"react-scripts": "5.0.1"是当前的可以使用`npm install @craco/craco@alpha -D`
 
-​		4.craco.config.js配置后需要修改package.json文件中启动方式![](.\IMG_README\2.png)
+​		4.craco.config.js配置后需要修改package.json文件中启动方式![2](https://github.com/Liu-linxi/Imitation_airbnb/assets/86284893/e4743638-b303-44e6-81ef-a97319ebd371)
+
 
 ​		5.[配置less参考](https://4x-ant-design.antgroup.com/docs/react/use-with-create-react-app-cn/)
 
