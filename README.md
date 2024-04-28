@@ -24,11 +24,20 @@
 
 3.craco.config.js配置后需要修改package.json文件中启动方式![2](https://github.com/Liu-linxi/Imitation_airbnb/assets/86284893/e4743638-b303-44e6-81ef-a97319ebd371)
 
-4.[配置less参考](https://4x-ant-design.antgroup.com/docs/react/use-with-create-react-app-cn/)
+###### 4.[配置less参考](https://4x-ant-design.antgroup.com/docs/react/use-with-create-react-app-cn/)
 
-5.样式重置` npm install normalize.css`
+###### 5.样式重置` npm install normalize.css`
 
-6.项目路由配置`npm install react-router-dom`
+###### 6.项目路由配置`npm install react-router-dom`
+
+##### 7.配置状态管理redux
+
+###### 	1.普通方式:`npm install redux`;
+	2.@reduxjs/toolkit方式:（推荐方式,未来的趋势）`npm install @reduxjs/toolkit`此模块依赖redux因此无需安装redux
+
+###### 	使用：`npm install @reduxjs/toolkit react-redux`
+
+两种写法均有涉及
 
 ## 可用脚本
 
