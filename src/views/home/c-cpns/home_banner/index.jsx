@@ -6,7 +6,6 @@ import coverImg from '@/assets/img/cover_01.jpeg'
 const HomeBanner = memo(() => {
   return (
     <BannerWrapper>
-      HomeBanner
       {/* <img src={coverImg} alt="" /> */}
     </BannerWrapper>
   )
