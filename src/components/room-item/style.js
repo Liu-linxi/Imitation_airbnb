@@ -2,16 +2,14 @@ import styled from "styled-components";
 
 
 export const ItemWrapper = styled.div`
-  flex-shrink: 0;
   box-sizing: border-box;
-  width: ${props => props.itemWidth};
-  padding: 8px;
 
-  .inner {
+  .roomcontent{
     width: 100%;
   }
-
+  
   .cover {
+    /* 为了让图片完全撑起来 */
     position: relative;
     box-sizing: border-box;
     padding: 66.66% 8px 0;
@@ -114,7 +112,7 @@ export const ItemWrapper = styled.div`
   .price {
     margin: 8px 0;
   }
-
+  
   .bottom {
     display: flex;
     align-items: center;
