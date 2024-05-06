@@ -7,10 +7,5 @@ export const HomeWrapper = styled.div`
   }
   .good-price{
     margin-top: 30px;
-    .room-list{
-      display: grid;
-      grid-template-columns: repeat(${props => props.numCol},1fr);
-      grid-gap: 40px 30px;
-    } 
   }
 `

@@ -5,7 +5,7 @@ import { ItemWrapper } from './style'
 
 const RoomItem = memo((props) => {
 
-  const { itemData, itemWidth = "25%", itemClick } = props
+  const { itemData } = props
   return (
     <ItemWrapper verifyColor={itemData?.verify_info?.text_color || "#39576a"}>
       <div className='roomcontent'>

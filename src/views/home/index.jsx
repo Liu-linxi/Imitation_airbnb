@@ -5,9 +5,7 @@ import { HomeWrapper } from './style'
 import HomeBanner from './c-cpns/home_banner'
 import { fetchHomeDataAction } from '@/store/modules/home'
 import SectionHeader from '@/components/section-header'
-import RoomItem from '@/components/room-item'
-
-import Rating from '@mui/material/Rating';
+import SectionRooms from '@/components/section-rooms'
 
 const home = memo(() => {
   //  发起网络请求
@@ -22,18 +20,12 @@ const home = memo(() => {
   const { goodPriceInfo } = useSelector((state) => ({ goodPriceInfo: state.home.goodPriceInfo }), shallowEqual)
   /** 只有进行浅拷贝发生改变的时候才进行重新获取数据，重新渲染 */
   return (
-    <HomeWrapper numCol={4}>
+    <HomeWrapper>
       <HomeBanner />
       <div className='content'>
         <div className='good-price'>
           <SectionHeader title={goodPriceInfo.title}></SectionHeader>
-          <ul className='room-list'>
-            {
-              goodPriceInfo.list?.slice(0, 8).map(item => {
-                return <RoomItem itemData={item} key={item.id} />
-              })
-            }
-          </ul>
+          <SectionRooms roomList={goodPriceInfo.list} itemWidth={4}></SectionRooms>
         </div>
       </div>
     </HomeWrapper>
