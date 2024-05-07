@@ -19,10 +19,11 @@ const home = memo(() => {
 
   /** 从redux中获取数据 */
   /** 只有进行浅拷贝发生改变的时候才进行重新获取数据，重新渲染 */
-  const { goodPriceInfo, highScoreInfo, discountInfo } = useSelector((state) => ({
+  const { goodPriceInfo, highScoreInfo, discountInfo, recommendInfo } = useSelector((state) => ({
     goodPriceInfo: state.home.goodPriceInfo,
     highScoreInfo: state.home.highScoreInfo,
     discountInfo: state.home.discountInfo,
+    recommendInfo: state.home.recommendInfo
   }), shallowEqual)
 
 
@@ -33,6 +34,7 @@ const home = memo(() => {
       <div className='content'>
         {/* 折扣数据 */}
         {isEmptyO(discountInfo) && <HomeSectionV2 infoData={discountInfo}></HomeSectionV2>}
+        {isEmptyO(recommendInfo) && <HomeSectionV2 infoData={recommendInfo}></HomeSectionV2>}
         {isEmptyO(goodPriceInfo) && <HomeSectionV1 infoData={goodPriceInfo} itemWidth={4}></HomeSectionV1>}
         {isEmptyO(highScoreInfo) && <HomeSectionV1 infoData={highScoreInfo} itemWidth={4}></HomeSectionV1>}
       </div>
