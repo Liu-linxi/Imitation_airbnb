@@ -25,7 +25,7 @@ const home = memo(() => {
       <div className='content'>
         <div className='good-price'>
           <SectionHeader title={goodPriceInfo.title}></SectionHeader>
-          <SectionRooms roomList={goodPriceInfo.list} itemWidth={4}></SectionRooms>
+          <SectionRooms roomList={goodPriceInfo.list} $itemWidth={4}></SectionRooms>
         </div>
       </div>
     </HomeWrapper>
