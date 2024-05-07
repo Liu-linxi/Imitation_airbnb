@@ -35,7 +35,7 @@ const homeSlice = createSlice({
   name: "home",
   initialState: {
     goodPriceInfo: {},
-    higehighScoreInfo: {},
+    highScoreInfo: {},
     discountInfo: {},
     recommendInfo: {},
     longforInfo: {},
