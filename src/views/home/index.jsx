@@ -1,10 +1,12 @@
 import React, { memo, useEffect } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import { fetchHomeDataAction } from '@/store/modules/home'
 
 import { HomeWrapper } from './style'
 import HomeBanner from './c-cpns/home_banner'
-import { fetchHomeDataAction } from '@/store/modules/home'
 import HomeSectionV1 from './c-cpns/home-section-v1'
+import HomeSectionV2 from './c-cpns/home-section-v2'
+import { isEmptyO } from '@/utils'
 
 const home = memo(() => {
   //  发起网络请求
@@ -16,17 +18,23 @@ const home = memo(() => {
 
 
   /** 从redux中获取数据 */
-  const { goodPriceInfo, highScoreInfo } = useSelector((state) => ({
-    goodPriceInfo: state.home.goodPriceInfo,
-    highScoreInfo: state.home.highScoreInfo
-  }), shallowEqual)
   /** 只有进行浅拷贝发生改变的时候才进行重新获取数据，重新渲染 */
+  const { goodPriceInfo, highScoreInfo, discountInfo } = useSelector((state) => ({
+    goodPriceInfo: state.home.goodPriceInfo,
+    highScoreInfo: state.home.highScoreInfo,
+    discountInfo: state.home.discountInfo,
+  }), shallowEqual)
+
+
+
   return (
     <HomeWrapper>
       <HomeBanner />
       <div className='content'>
-        <HomeSectionV1 infoData={goodPriceInfo} itemWidth={4}></HomeSectionV1>
-        <HomeSectionV1 infoData={highScoreInfo} itemWidth={4}></HomeSectionV1>
+        {/* 折扣数据 */}
+        {isEmptyO(discountInfo) && <HomeSectionV2 infoData={discountInfo}></HomeSectionV2>}
+        {isEmptyO(goodPriceInfo) && <HomeSectionV1 infoData={goodPriceInfo} itemWidth={4}></HomeSectionV1>}
+        {isEmptyO(highScoreInfo) && <HomeSectionV1 infoData={highScoreInfo} itemWidth={4}></HomeSectionV1>}
       </div>
     </HomeWrapper>
   )
