@@ -1,4 +1,4 @@
-// import ScrollView from '@/base-ui/scroll-view'
+import ScrollView from '@/base-ui/scroll-view'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React, { memo, useState } from 'react'
@@ -16,7 +16,7 @@ const SectionTabs = memo((props) => {
 
   return (
     <TabsWrapper>
-      {/* <ScrollView> */}
+      <ScrollView>
       {
         tabNames.map((item, index) => {
           return (
@@ -30,8 +30,8 @@ const SectionTabs = memo((props) => {
           )
         })
       }
-      {/* </ScrollView> */}
-    </TabsWrapper>
+      </ScrollView>
+      </TabsWrapper>
   )
 })
 
