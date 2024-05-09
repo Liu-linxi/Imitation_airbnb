@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 export const ItemWrapper = styled.div`
   box-sizing: border-box;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: ${props => props.$itemWidth};
 
   .roomcontent{
     width: 100%;
