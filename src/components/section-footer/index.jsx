@@ -15,7 +15,7 @@ const SectionFooter = memo((props) => {
   /** 事件处理的逻辑 */
   const navigate = useNavigate()
   function moreClickHandle() {
-    navigate("/entire")
+    navigate("/further")
   }
 
   return (

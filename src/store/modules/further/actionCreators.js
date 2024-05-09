@@ -1,4 +1,4 @@
-import { getEntireRoomList } from "@/services/modules/entire"
+import { getFurtherRoomList } from "@/services/modules/entire"
 import * as actionTypes from "./constants"
 
 export const changeCurrentPageAction = (currentPage) => ({
@@ -32,7 +32,7 @@ export const fetchRoomListAction = (page = 0) => {
     // 1.根据页码获取最新的数据
     // const currentPage = getState().entire.currentPage
     dispatch(changeIsLoadingAction(true))
-    const res = await getEntireRoomList(page * 20)
+    const res = await getFurtherRoomList(page * 20)
     dispatch(changeIsLoadingAction(false))
 
     // 2.获取到最新的数据, 保存redux的store中
