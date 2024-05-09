@@ -7,6 +7,7 @@ import HomeBanner from './c-cpns/home_banner'
 import HomeSectionV1 from './c-cpns/home-section-v1'
 import HomeSectionV2 from './c-cpns/home-section-v2'
 import { isEmptyO } from '@/utils'
+import HomeLongfor from './c-cpns/home-longfor'
 
 const home = memo(() => {
   //  发起网络请求
@@ -19,11 +20,12 @@ const home = memo(() => {
 
   /** 从redux中获取数据 */
   /** 只有进行浅拷贝发生改变的时候才进行重新获取数据，重新渲染 */
-  const { goodPriceInfo, highScoreInfo, discountInfo, recommendInfo } = useSelector((state) => ({
+  const { goodPriceInfo, highScoreInfo, discountInfo, recommendInfo, longforInfo } = useSelector((state) => ({
     goodPriceInfo: state.home.goodPriceInfo,
     highScoreInfo: state.home.highScoreInfo,
     discountInfo: state.home.discountInfo,
-    recommendInfo: state.home.recommendInfo
+    recommendInfo: state.home.recommendInfo,
+    longforInfo: state.home.longforInfo
   }), shallowEqual)
 
 
@@ -33,8 +35,12 @@ const home = memo(() => {
       <HomeBanner />
       <div className='content'>
         {/* 折扣数据 */}
+       
+        
         {isEmptyO(discountInfo) && <HomeSectionV2 infoData={discountInfo}></HomeSectionV2>}
         {isEmptyO(recommendInfo) && <HomeSectionV2 infoData={recommendInfo}></HomeSectionV2>}
+
+        {isEmptyO(longforInfo) && <HomeLongfor infoData={longforInfo}></HomeLongfor>}
         {isEmptyO(goodPriceInfo) && <HomeSectionV1 infoData={goodPriceInfo} itemWidth={4}></HomeSectionV1>}
         {isEmptyO(highScoreInfo) && <HomeSectionV1 infoData={highScoreInfo} itemWidth={4}></HomeSectionV1>}
       </div>
