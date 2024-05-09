@@ -10,7 +10,7 @@ const further = memo(() => {
 
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(fetchRoomListAction(2))
+    dispatch(fetchRoomListAction())
   })
 
   return (
