@@ -1,4 +1,4 @@
-import { getFurtherRoomList } from "@/services/modules/entire"
+import { getFurtherRoomList } from "@/services/modules/further"
 import * as actionTypes from "./constants"
 
 export const changeCurrentPageAction = (currentPage) => ({

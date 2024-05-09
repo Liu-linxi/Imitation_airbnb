@@ -5,7 +5,7 @@ const initialState = {
   roomList: [], // 房间列表
   totalCount: 0, // 总数据个数
 
-  isLoading: false
+  isLoading: false//是否加载中
 }
 
 function reducer(state = initialState, action) {
