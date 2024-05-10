@@ -4,8 +4,8 @@ import styled from "styled-components";
 export const ItemWrapper = styled.div`
   box-sizing: border-box;
   flex-shrink: 0;
-  box-sizing: border-box;
   width: ${props => props.$itemWidth};
+  padding: ${props => props.$itemPadding};
 
   .roomcontent{
     width: 100%;
@@ -29,7 +29,7 @@ export const ItemWrapper = styled.div`
     }
   }
 
-  .slider {
+  .swiper{
     position: relative;
     cursor: pointer;
 
@@ -54,41 +54,12 @@ export const ItemWrapper = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 83px;
+        width: 80px;
         height: 100%;
         background: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.25) 100%);
 
         &.right {
           background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 100%);
-        }
-      }
-    }
-
-    .indicator {
-      position: absolute;
-      z-index: 9;
-      bottom: 10px;
-      left: 0;
-      right: 0;
-      width: 30%;
-      margin: 0 auto;
-
-      .item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 14.29%;
-
-        .dot {
-          width: 6px;
-          height: 6px;
-          background-color: #fff;
-          border-radius: 50%;
-
-          &.active {
-            width: 8px;
-            height: 8px;
-          }
         }
       }
     }
