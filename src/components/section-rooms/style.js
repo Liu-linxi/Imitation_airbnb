@@ -6,5 +6,5 @@ export const RoomsWrapper = styled.div`
   margin: 0 -8px; */
   display: grid;
   grid-template-columns: repeat(${props => props.$itemWidth},1fr);
-  grid-gap: 40px 30px;
+  grid-gap: 30px 20px;
 `
