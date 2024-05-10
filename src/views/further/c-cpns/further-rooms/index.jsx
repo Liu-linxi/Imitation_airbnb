@@ -14,7 +14,7 @@ const FurtherRooms = memo(() => {
       <h2 className='title'> 共{totalCount}处住所</h2>
       <div className='list'>
         {
-          roomList.map(item => <RoomItem itemData={item} key={item.id} />)
+          roomList.map(item => <RoomItem itemData={item} key={item.id} itemWidth="20%" itemPadding="8px"/>)
         }
       </div>
       {isLoading && <div className='cover'></div>}
