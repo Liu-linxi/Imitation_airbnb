@@ -6,7 +6,7 @@ import FurtherPagination from './c-cpns/further-pagination'
 import { useDispatch } from 'react-redux'
 import { fetchRoomListAction } from '@/store/modules/further/actionCreators'
 
-const further = memo(() => {
+const Further = memo(() => {
 
   const dispatch = useDispatch()
   useEffect(() => {
@@ -22,4 +22,4 @@ const further = memo(() => {
   )
 })
 
-export default further
+export default Further

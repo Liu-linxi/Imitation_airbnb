@@ -10,7 +10,7 @@ import { isEmptyO } from '@/utils'
 import HomeLongfor from './c-cpns/home-longfor'
 import HomeSectionV3 from './c-cpns/home-section-v3'
 
-const home = memo(() => {
+const Home = memo(() => {
   //  发起网络请求
   /**派发异步事件：发送网络请求 */
   const dispatch = useDispatch()
@@ -48,4 +48,4 @@ const home = memo(() => {
   )
 })
 
-export default home
+export default Home
