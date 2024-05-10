@@ -10,14 +10,14 @@ import classNames from 'classnames'
 
 const RoomItem = memo((props) => {
 
-  const { itemData, itemWidth, itemPadding } = props
+  const { itemData, itemWidth, itemPadding, itemClick } = props
   const [selectIndex, setSelectIndex] = useState(0)
 
   const swiperRef = useRef()
 
 
   /**左右控制器显示处理 */
-  function controlClick(isLeft = true) {
+  function controlClick(isLeft = true, event) {
     isLeft ? swiperRef.current.prev() : swiperRef.current.next()
 
     // 获取最新的索引
@@ -26,48 +26,61 @@ const RoomItem = memo((props) => {
     if (newIndex < 0) newIndex = pictureUrlsLenght - 1;
     if (newIndex > pictureUrlsLenght - 1) newIndex = 0;
     setSelectIndex(newIndex)
+    // 阻止事件冒泡
+    event.stopPropagation()
   }
 
 
-  return (
-    <ItemWrapper $verifyColor={itemData?.verify_info?.text_color || "#39576a"} $itemWidth={itemWidth} $itemPadding={itemPadding}>
-      <div className='roomcontent'>
-        {/* <div className='cover'>
-          <img src={itemData.picture_url} alt="" />
-        </div> */}
-        <div className='swiper'>
-          <div className='control'>
-            <div className='btn left' onClick={e => controlClick(true, e)}>
-              <IconArrowLeft width={22} height={22} />
-            </div>
-            <div className='btn right' onClick={e => controlClick(false, e)}>
-              <IconArrowRight width={22} height={22} />
-            </div>
-          </div>
-          <div className='indicator'>
-            <Indicator selectIndex={selectIndex}>
-              {
-                itemData?.picture_urls?.map((item, index) => (
-                  <div className="item" key={index}>
-                    <span className={classNames("dot", { active: selectIndex === index })}></span>
-                  </div>
-                ))
-              }
-            </Indicator>
-          </div>
-          <Carousel dots={false} ref={swiperRef}>
-            {
-              itemData?.picture_urls?.map(item => {
-                return (
-                  <div className='cover' key={item}>
-                    <img src={item} alt="" />
-                  </div>
-                )
-              })
-            }
-          </Carousel>
-        </div>
+  const pictureElement = (
+    <div className='cover'>
+      <img src={itemData.picture_url} alt="" />
+    </div>
+  )
 
+  const swiperElement = (
+    <div className='swiper'>
+      <div className='control'>
+        <div className='btn left' onClick={e => controlClick(true, e)}>
+          <IconArrowLeft width={22} height={22} />
+        </div>
+        <div className='btn right' onClick={e => controlClick(false, e)}>
+          <IconArrowRight width={22} height={22} />
+        </div>
+      </div>
+      <div className='indicator'>
+        <Indicator selectIndex={selectIndex}>
+          {
+            itemData?.picture_urls?.map((item, index) => (
+              <div className="item" key={index}>
+                <span className={classNames("dot", { active: selectIndex === index })}></span>
+              </div>
+            ))
+          }
+        </Indicator>
+      </div>
+      <Carousel dots={false} ref={swiperRef}>
+        {
+          itemData?.picture_urls?.map(item => {
+            return (
+              <div className='cover' key={item}>
+                <img src={item} alt="" />
+              </div>
+            )
+          })
+        }
+      </Carousel>
+    </div>
+  )
+
+  function itemClickHandle() {
+    if (itemClick) itemClick(itemData)
+  }
+
+  return (
+    <ItemWrapper onClick={itemClickHandle} $verifyColor={itemData?.verify_info?.text_color || "#39576a"} $itemWidth={itemWidth} $itemPadding={itemPadding}>
+      <div className='roomcontent'>
+
+        {itemData.picture_urls ? swiperElement : pictureElement}
         <div className='desc'>
           {itemData.verify_info.messages.join(".")}
         </div>
