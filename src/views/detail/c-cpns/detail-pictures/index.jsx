@@ -1,10 +1,10 @@
+import PropTypes from 'prop-types'
 import React, { memo, useState } from 'react'
 import { PicturesWrapper } from './style'
-import { shallowEqual, useSelector } from 'react-redux'
 import PictureBrower from '@/base-ui/picture-browser'
 
-const DetailPictures = memo(() => {
-  const detailInfo = useSelector(state => state.detail.detailInfo, shallowEqual)
+const DetailPictures = memo((props) => {
+  const { detailInfo } = props
 
   const [showPic, setShowPic] = useState(false);
   const [chooseIndex, setChooseIndex] = useState(0);
@@ -43,5 +43,9 @@ const DetailPictures = memo(() => {
     </PicturesWrapper>
   )
 })
+
+DetailPictures.prototypes = {
+  detailInfo: PropTypes.object
+}
 
 export default DetailPictures
