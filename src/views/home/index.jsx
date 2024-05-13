@@ -9,6 +9,7 @@ import HomeSectionV2 from './c-cpns/home-section-v2'
 import { isEmptyO } from '@/utils'
 import HomeLongfor from './c-cpns/home-longfor'
 import HomeSectionV3 from './c-cpns/home-section-v3'
+import { changeHeaderConfigAction } from '@/store/modules/main'
 
 const Home = memo(() => {
   //  发起网络请求
@@ -16,6 +17,7 @@ const Home = memo(() => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchHomeDataAction("测试传参数"))
+    dispatch(changeHeaderConfigAction({ isFixed: true }))
   }, [dispatch])
 
 

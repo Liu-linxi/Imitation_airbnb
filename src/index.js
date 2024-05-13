@@ -14,18 +14,25 @@ import theme from './assets/theme';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+/**
+ * Provider和Suspenses顺序调换因为Suspenses懒加载，
+ * 避免dispatch监听不到内容
+ * 所以这里推荐使用Provider放在最外层
+ */
 root.render(
   // <React.StrictMode>
-  <Suspense fallback="loading...">
-    <Provider store={store}>
+  <Provider store={store}>
+    <Suspense fallback="loading...">
       <ThemeProvider theme={theme}>
         <HashRouter>
           <App />
         </HashRouter>
       </ThemeProvider>
 
-    </Provider>
-  </Suspense>
+    </Suspense>
+  </Provider>
   //</React.StrictMode>
 );
 

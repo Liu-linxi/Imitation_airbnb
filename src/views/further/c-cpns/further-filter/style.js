@@ -2,8 +2,18 @@ import styled from "styled-components";
 
 
 export const FilterWrapper = styled.div`
-  margin: 10px 0;
-  padding-left: 20px;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  right: 0;
+  top: 80px;
+  
+  display: flex; 
+  align-items: center;
+  height: 48px;
+  padding-left: 16px;
+  border-bottom: 1px solid #f2f2f2;
+  background-color: #fff;
   
   .filter {
     display: flex;
