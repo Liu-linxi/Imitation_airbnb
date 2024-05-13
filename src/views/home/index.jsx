@@ -17,7 +17,7 @@ const Home = memo(() => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchHomeDataAction("测试传参数"))
-    dispatch(changeHeaderConfigAction({ isFixed: true }))
+    dispatch(changeHeaderConfigAction({ isFixed: true,topAlpha:true }))
   }, [dispatch])
 
 
