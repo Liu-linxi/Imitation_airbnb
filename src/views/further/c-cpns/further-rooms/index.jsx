@@ -18,7 +18,7 @@ const FurtherRooms = memo(() => {
   const itemHandle = useCallback((item) => {
     dispatch(changeDetailInfoAction(item))
     navigate("/detail")
-  }, [navigate])
+  }, [navigate,dispatch])
 
   return (
     <RoomsWrapper>
