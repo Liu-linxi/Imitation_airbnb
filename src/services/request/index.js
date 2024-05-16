@@ -27,6 +27,6 @@ class LXRequest {
     return this.request({ ...config, method: "post" })
   }
 }
+const request=new LXRequest(BASE_URL, TIMEOUT)
 
-
-export default new LXRequest(BASE_URL, TIMEOUT)
+export default request
